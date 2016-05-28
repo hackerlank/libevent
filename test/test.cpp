@@ -8,7 +8,7 @@
 
 #include <event.h> 
 
-using namespacestd; 
+using namespace std; 
 
 // 定时事件回调函数 
 
@@ -32,7 +32,7 @@ void onTime(int sock, short event, void*arg)
 
 } 
 
-intmain() 
+int main() 
 
 { 
 	
