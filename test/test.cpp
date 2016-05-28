@@ -20,7 +20,7 @@ void onTime(int sock, short event, void*arg)
 
  
 
-  struct timeval tv; 
+  timeval tv; 
 
   tv.tv_sec = 1; 
 
