@@ -20,7 +20,7 @@ void onTime(int sock, short event, void*arg)
 
  
 
-  structtimeval tv; 
+  struct timeval tv; 
 
   tv.tv_sec = 1; 
 
@@ -28,7 +28,7 @@ void onTime(int sock, short event, void*arg)
 
   // 重新添加定时事件（定时事件触发后默认自动删除） 
 
-  event_add((structevent*)arg, &tv); 
+  event_add((event*)arg, &tv); 
 
 } 
 
@@ -42,7 +42,7 @@ int main()
 	
 	
 	
-	structevent evTime; 
+	event evTime; 
 	
 	// 设置定时事件 
 	
@@ -50,7 +50,7 @@ int main()
 	
 	
 	
-	structtimeval tv; 
+	timeval tv; 
 	
 	tv.tv_sec = 1; 
 	
@@ -68,6 +68,6 @@ int main()
 	
 	
 	
-	return0; 
+	return 0; 
 	
 }
