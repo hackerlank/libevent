@@ -1,4 +1,6 @@
 /******* ¿Í»§¶Ë³ÌÐò  client.c ************/
+#include <event2/bufferevent_struct.h>  
+#include <event2/event_compat.h>  
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>

@@ -1,4 +1,6 @@
 // 服务器端
+#include <event2/bufferevent_struct.h>  
+#include <event2/event_compat.h>  
 #include <iostream>
 #include <event.h>
 #include <sys/socket.h>
@@ -23,8 +25,8 @@ void accept_handle(const int sfd, const short event, void *arg)
 
 	int fd = accept(sfd, (struct sockaddr *) &addr, &addrlen); //处理连接
 
-	struct bufferevent* buf_ev;
-	buf_ev = bufferevent_new(fd, NULL, NULL, NULL, NULL);
+	struct bufferevent *buf_ev=bufferevent_socket_new(  
+        main_base,fd,BEV_OPT_CLOSE_ON_FREE); 
 
 	buf_ev->wm_read.high = 4096;
 
